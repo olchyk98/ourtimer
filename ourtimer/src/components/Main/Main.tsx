@@ -14,9 +14,12 @@ export const Main = (): JSX.Element => {
         alt="victoria and oles"
         src={ LogoURL }
       />
-      <Timer
-        startDate={ 1636153200000 } // 6 November 2021
-      />
+      <div className={ styles.timerContainer }>
+        <span className={ styles.description }>Together for:</span>
+        <Timer
+          startDate={ 1636231620000 } // 6 November 2021 21:47
+        />
+      </div>
       <Carousel
         interval={ 5e3 }
         images={ carouselImages }

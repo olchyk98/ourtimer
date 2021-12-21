@@ -19,8 +19,8 @@ export const useStyles = makeStyles({
     color: 'transparent',
   },
   label: {
-    fontSize: '1.5rem',
-    color: 'rbga(255, 255, 255, .7)',
+    fontSize: '1rem',
+    color: 'rgba(255, 255, 255, .7)',
     fontWeight: 'lighter',
   },
 })

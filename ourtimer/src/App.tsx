@@ -2,7 +2,5 @@ import React from 'react'
 import { Main } from './components'
 
 export const App = (): JSX.Element => (
-  <div>
-    <Main />
-  </div>
+  <Main />
 )

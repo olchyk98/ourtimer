@@ -4,8 +4,8 @@ const containerPadding = 20
 
 export const useStyles = makeStyles({
   container: {
-    height: `calc(100vh - ${containerPadding * 2}px)`,
-    width: `calc(100vw - ${containerPadding * 2}px)`,
+    height: `calc(100% - ${containerPadding * 2}px)`,
+    width: `calc(100% - ${containerPadding * 2}px)`,
     position: 'relative',
     display: 'flex',
     alignItems: 'center',
@@ -15,7 +15,17 @@ export const useStyles = makeStyles({
     background: 'black',
   },
   logo: {
-    width: '100%',
-    maxWidth: '300px',
+    height: '80px',
+  },
+  description: {
+    maxWidth: '90%',
+    color: 'rgba(255, 255, 255, .7)',
+    textAlign: 'center',
+    fontWeight: 'lighter',
+  },
+  timerContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
 })
