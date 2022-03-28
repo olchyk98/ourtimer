@@ -37,7 +37,7 @@ export function GalleryCarousel ({ lifeTime = 5e3 }: GalleryCarouselProps): Reac
   }, [ galleryUrls, lifeTime ])
 
   return (
-    <div className="flex items-stretch relative w-full sm:w-[400px] h-[200px] max-w-[400px]">
+    <div className="flex items-stretch relative sm:w-[400px] w-[300px] h-[200px]">
       <div className="w-full rounded-md shadow overflow-hidden">
         <CarouselImage
           url={ galleryUrls[imageIndex] }

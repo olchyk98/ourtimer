@@ -12,7 +12,7 @@ export const Counter = memo(
         transition={{ type: 'keyframes', duration: .2 }}
         animate={{ opacity: [ 0, 1 ] }}
         exit="exit"
-        className="space-y-5 flex-col flex items-center">
+        className="gap-y-2 flex-col flex items-center">
           <span className="text-white text-6xl font-semibold">{enforceTwoDigits(value)}</span>
           <TextLabel>{label}</TextLabel>
       </motion.div>

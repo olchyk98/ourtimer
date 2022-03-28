@@ -11,8 +11,8 @@ export const PathMenu = ({
 }: PathMenuProps) => (
   <div className={cx(
     'flex items-center',
-    { ['flex-col space-y-4']: direction === 'vertical' },
-    { ['space-x-2']: direction === 'horizontal' },
+    { ['flex-col gap-y-4']: direction === 'vertical' },
+    { ['gap-x-2']: direction === 'horizontal' },
     )}>
     <AnimateSharedLayout>
       {

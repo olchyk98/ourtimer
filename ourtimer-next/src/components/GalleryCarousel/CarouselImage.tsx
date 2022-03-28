@@ -5,7 +5,7 @@ export const CarouselImage = ({ url }: CarouselImageProps): React.ReactElement =
     <motion.img
       key={ url }
       src={ url }
-      className="rounded-sm h-full w-full object-cover"
+      className="rounded h-full w-full object-cover"
       exit={{ opacity: 0 }}
       animate={{ opacity: [ 0, 1 ] }}
       transition={{ type: 'keyframes', duration: .3 }}

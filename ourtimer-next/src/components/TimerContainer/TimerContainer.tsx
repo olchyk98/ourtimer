@@ -24,9 +24,9 @@ export function TimerContainer (): React.ReactElement {
   }, [ startTime ])
 
   return (
-    <div className="flex space-y-10 flex-col justify-center">
+    <div className="flex gap-y-5 flex-col justify-center">
       <TextLabel>Together for:</TextLabel>
-      <div className="flex items-center space-x-10 flex-wrap justify-center">
+      <div className="flex items-center gap-x-10 gap-y-5 flex-wrap justify-center">
         <Counter
           label="Months"
           value={ progressDate.getMonth() }
