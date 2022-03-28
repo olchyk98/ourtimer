@@ -1,0 +1,1 @@
+export { scrollSwitch } from './scrollSwitch'

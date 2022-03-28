@@ -1,12 +1,16 @@
-import Image from 'next/image'
+import { AnimatePresence, motion } from 'framer-motion'
 
 export const CarouselImage = ({ url }: CarouselImageProps): React.ReactElement => (
-  <div className="overflow-hidden rounded-sm w-[300px] h-[200px]">
-    <img
-      className="h-full w-full object-cover"
+  <AnimatePresence initial={ true } exitBeforeEnter={ true }>
+    <motion.img
+      key={ url }
       src={ url }
+      className="rounded-sm h-full w-full object-cover"
+      exit={{ opacity: 0 }}
+      animate={{ opacity: [ 0, 1 ] }}
+      transition={{ type: 'keyframes', duration: .3 }}
     />
-  </div>
+  </AnimatePresence>
 )
 
 export interface CarouselImageProps {

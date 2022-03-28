@@ -1,33 +1,52 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useContext } from 'react'
+import { ScreenContext } from '../../contexts'
 import { CarouselImage } from './CarouselImage'
-import { CarouselPath } from './CarouselPath'
+import { PathMenu } from '../PathMenu'
 
-// TODO: Animations
-
-export function GalleryCarousel ({ photoUrls, lifeTime = 5e3 }: GalleryCarouselProps): React.ReactElement {
+export function GalleryCarousel ({ lifeTime = 5e3 }: GalleryCarouselProps): React.ReactElement {
+  const { galleryUrls } = useContext(ScreenContext)
   const [ imageIndex, setImageIndex ] = useState(0)
+  const scrollIntervalId = useRef<NodeJS.Timer | null>(null)
+
+  function startTimer (): void {
+    const { current: intervalId } = scrollIntervalId
+
+    if (intervalId) {
+      clearInterval(intervalId)
+    }
+
+    scrollIntervalId.current = setInterval(() => {
+      setImageIndex(
+        (currentIndex) => (
+          currentIndex >= galleryUrls.length - 1
+            ? 0
+            : currentIndex + 1
+        )
+      )
+
+    }, lifeTime)
+  }
+
+  function scrollToImage (index: number): void {
+    startTimer()
+    setImageIndex(index)
+  }
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      const nextIndex = imageIndex >= photoUrls.length - 1
-        ? 0
-        : imageIndex + 1
-
-      setImageIndex(nextIndex)
-    }, lifeTime)
-
-    return () => clearInterval(intervalId)
-  }, [ photoUrls, lifeTime ])
+    scrollToImage(0)
+  }, [ galleryUrls, lifeTime ])
 
   return (
-    <div className="flex items-stretch h-48 relative">
-      <div className="w-full">
-        <CarouselImage url={ photoUrls[imageIndex] } />
+    <div className="flex items-stretch relative w-full sm:w-[400px] h-[200px] max-w-[400px]">
+      <div className="w-full rounded-md shadow overflow-hidden">
+        <CarouselImage
+          url={ galleryUrls[imageIndex] }
+        />
       </div>
-      <div className="w-12 shrink-0 relative">
-        <CarouselPath
-          itemsCount={ photoUrls.length }
-          onSelect={ (index) => setImageIndex(index) }
+      <div className="w-12 shrink-0 flex justify-center relative">
+        <PathMenu
+          itemsCount={ galleryUrls.length }
+          onSelect={ scrollToImage }
           selectedIndex={ imageIndex }
         />
       </div>
@@ -36,6 +55,5 @@ export function GalleryCarousel ({ photoUrls, lifeTime = 5e3 }: GalleryCarouselP
 }
 
 export interface GalleryCarouselProps {
-  photoUrls: string[]
   lifeTime?: number
 }
