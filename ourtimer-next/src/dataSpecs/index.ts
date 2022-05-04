@@ -12,16 +12,17 @@ export const dataSpecs: DataSpec[] = [
     ],
     startTime: 1636231620000,
   },
-  {
-    key: 'MarkoMinja',
-    logoUrl: '/marko_minja_logo.svg',
-    galleryUrls: [
-      '/274808002_998658917713949_3226857673579248529_n.jpg',
-      '/274787122_139163838589666_2090130431360998068_n.jpg',
-      '/274808180_478428867242424_1796974341138344377_n.jpg',
-    ],
-    startTime: 1634755278000,
-  }
+  //{
+  //key: 'MarkoMinja',
+  //logoUrl: '/marko_minja_logo.svg',
+  //galleryUrls: [
+  //'/274808002_998658917713949_3226857673579248529_n.jpg',
+  //'/274787122_139163838589666_2090130431360998068_n.jpg',
+  //'/274808180_478428867242424_1796974341138344377_n.jpg',
+  //],
+  //startTime: 1634755278000,
+  //stopTime:1651614643000,
+  //}
 ]
 
 export const getIndexForSpec = (key: DataSpecKey): number | -1 => (
@@ -57,4 +58,5 @@ export interface DataSpec {
   logoUrl: string
   galleryUrls: string[]
   startTime: number
+  endTime?: number
 }
