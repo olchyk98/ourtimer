@@ -5,7 +5,7 @@ interface ResponseBody {
   framework: 'Next.js' | 'React.js'
 }
 
-export default function handler(
+export default function handler (
   req: NextApiRequest,
   res: NextApiResponse<ResponseBody>,
 ): void {

@@ -13,7 +13,7 @@ export const PathMenu = ({
     'flex items-center',
     { ['flex-col gap-y-4']: direction === 'vertical' },
     { ['gap-x-2']: direction === 'horizontal' },
-    )}>
+  )}>
     <AnimateSharedLayout>
       {
         times(
@@ -24,7 +24,7 @@ export const PathMenu = ({
               onClick={ () => onSelect(index) }
             />
           ),
-          itemsCount
+          itemsCount,
         )
       }
     </AnimateSharedLayout>

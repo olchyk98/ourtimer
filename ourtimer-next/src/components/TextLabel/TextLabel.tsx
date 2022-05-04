@@ -5,5 +5,5 @@ export const TextLabel = ({ children: label }: TextLabelProps) => (
 )
 
 export interface TextLabelProps {
-	children: string
+  children: string
 }

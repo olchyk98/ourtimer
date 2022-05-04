@@ -21,7 +21,7 @@ export function GalleryCarousel ({ lifeTime = 5e3 }: GalleryCarouselProps): Reac
           currentIndex >= galleryUrls.length - 1
             ? 0
             : currentIndex + 1
-        )
+        ),
       )
 
     }, lifeTime)

@@ -6,7 +6,7 @@ import { Counter } from './Counter'
 export function TimerContainer (): React.ReactElement {
   const { startTime, key: dataSpecKey } = useContext(ScreenContext)
   const [ progressDate, setProgressDate ] = useState(
-    calculateProgressDate(startTime)
+    calculateProgressDate(startTime),
   )
 
   function handleDateTick () {

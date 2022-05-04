@@ -5,7 +5,7 @@ export const PathMenuItem = ({ selected, onClick }: PathMenuItemProps) => (
   <div
     onClick={ onClick }
     className={cx('h-2 w-2 rounded-full bg-neutral-500 cursor-pointer transition duration-500', {
-      ['bg-transparent']: selected
+      ['bg-transparent']: selected,
     })}
   >
     {
